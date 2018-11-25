@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="KmBPLerFBybYZz_D8jmHGw8EqMyaT-o61YbQ_xSFTbI" />
+    <meta name="description" content="test">
+    <meta name="keywords" content="bisheng,React,组件">
+    <title>bisheng doc website practice</title>
+    <link rel="shortcut icon" href="https://cdn.dribbble.com/users/2201653/avatars/mini/a2574e95fae7577c739b5804a4ea6934.png">
+    <link type="text/css" href="{{ root }}index.css"/>
+    <!--[if lte IE 10]>
+    <script
+      src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="react-content">
+      {{ content | safe }}
+    </div>
+    <script src="{{ root }}common.js"></script>
+    <script src="{{ root }}index.js"></script> 
+  </body>
+</html>
