@@ -2,48 +2,51 @@ import React from 'react';
 import { Input, Icon } from 'antd';
 import PropTypes from 'prop-types';
 
-const DEFAULT_VALUE = 0;
+const DEFAULT_VALUE = '0';
 const DEFAULT_ACCURACY = 1;
-const OP_MINUS = 'onMinus';
-const OP_PLUS = 'onPlus';
+const OP_MINUS = 'MINUS';
+const OP_PLUS = 'PLUS';
 
 export default class NumberInput extends React.PureComponent {
   static propTypes = {
-    onCustomChangeHandler: PropTypes.func,
+    defaultValue: PropTypes.string,
+    value: PropTypes.string,
     onChange: PropTypes.func,
-    onMinus: PropTypes.func,
-    onPlus: PropTypes.func,
+    interceptor: PropTypes.func,
     width: PropTypes.number,
     accuracy: PropTypes.number //默认加减的精度
   };
 
   static defaultProps = {
-    onCustomChangeHandler: () => {},
-    onMinus: () => {},
-    onPlus: () => {},
+    accuracy: DEFAULT_ACCURACY,
+    width: 120,
     onChange: () => {},
-    accuracy: 1,
-    width: 120
+    interceptor: () => true
   };
 
   static getDerivedStateFromProps(nextProps) {
     // Should be a controlled components
     if ('value' in nextProps) {
       return {
-        ...(nextProps.value || DEFAULT_VALUE)
+        value: nextProps.value,
       };
     }
     return null;
   }
 
-  state = {
-    value: this.props.value || DEFAULT_VALUE,
-    accuracy: this.props.accuracy || DEFAULT_ACCURACY
-  };
+  constructor(props) {
+    super(props);
+
+    const { value, defaultValue, accuracy } = this.props;
+    this.state = {
+      value: value || defaultValue || DEFAULT_VALUE,
+      accuracy
+    };
+  }
 
   onChangeHandler = e => {
     // e => event object
-    const { onChange, onCustomChangeHandler } = this.props;
+    const { onChange } = this.props;
     const value = e.target.value;
 
     if (value !== '-' && value && isNaN(Number(value))) return;
@@ -51,16 +54,22 @@ export default class NumberInput extends React.PureComponent {
     this.setState({ value }, () => {
       const { value } = this.state;
       onChange(value);
-      onCustomChangeHandler(value);
     });
   };
 
   operate = operate => {
     const { accuracy, value } = this.state;
-    const newValue = operate === OP_MINUS ? Number(value) - accuracy : Number(value) + accuracy;
+    const newValue = (operate === OP_MINUS)
+      ? `${Number(value) - Number(accuracy)}` 
+      : `${Number(value) + Number(accuracy)}`;
+    const { onChange, interceptor } = this.props;
+
+    // 这里设置一道拦截器，加减改变状态前，可以停止修改。
+    if (!interceptor(value, newValue, operate)) return false;
 
     this.setState({ value: newValue }, () => {
-      this.props[operate](this.state.value);
+      // this.props[operate](this.state.value);
+      onChange(this.state.value);
     });
   };
 
