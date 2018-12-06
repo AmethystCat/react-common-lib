@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run npm-build && bisheng start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "npm-build": "rm -rf lib && babel components -d lib"
+    "npm-build": "rm -rf lib && babel components -d lib",
+    "test": "jest --verbose"
   },
   "author": "hc",
   "license": "ISC",
