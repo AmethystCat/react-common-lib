@@ -1,4 +1,5 @@
 import NumberInput from './numberInput';
+import CustomMutiSelect from './customMutiSelect';
 
-export { NumberInput };
-export default { NumberInput };
+export { NumberInput, CustomMutiSelect };
+export default { NumberInput, CustomMutiSelect };

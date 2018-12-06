@@ -13,7 +13,7 @@ module.exports = {
     // important
     config.devtool = 'eval';
     config.resolve.alias = {
-      'gateway-lib': path.join(process.cwd(), 'lib'),
+      'gatewayfe-lib': path.join(process.cwd(), 'lib'),
     };
     return config;
   }
