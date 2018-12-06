@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-// import { Select } from 'antd';
-import Enzyme, { shallow, mount } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import CustomMutiSelect from '../components/customMutiSelect';
 
@@ -128,7 +127,7 @@ describe('CustomMutiSelect UT', () => {
     
     // when
     instance.onChangeHandler(mockSelectValues);
-    // when
+    // then
     expect(hasIDAll(wrapper)).toBeFalsy();
     expect(wrapper.state().selectedValues).toEqual(mockSelectValues); 
     expect(onChange).toBeCalledWith(mockSelectValues);
