@@ -1,7 +1,7 @@
 ---
 title: RadioCheckbox 可取消的单选框
 publishDate: 2018-12-07
-cols: 1
+cols: 2
 tags:
   - react component
 ---
