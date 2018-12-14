@@ -12,3 +12,10 @@ const content = 'Hello react';
 
 ReactDOM.render(<OpenTip {...{ content }} />, mountNode);
 ```
+
+```css
+.section-open-tip .anticon-info-circle-o:hover {
+  color: red;
+  cursor: pointer;
+}
+```
