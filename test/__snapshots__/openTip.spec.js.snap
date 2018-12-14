@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OpenTip UT snapshot 1`] = `
+<div
+  className="section-open-tip"
+>
+  <i
+    className="anticon anticon-info-circle-o"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`OpenTip UT snapshot 2`] = `
+<div
+  className="section-open-tip"
+>
+  <i
+    className="anticon anticon-info-circle-o"
+    onClick={[Function]}
+  />
+</div>
+`;
