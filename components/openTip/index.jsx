@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 function render(props, el) {
   const { content } = props;
-  
+
   ReactDOM.render(
     <Modal {...props} style={{ top: '5%' }}>
-      { content }
+      {content}
     </Modal>,
     el
   );
@@ -33,23 +33,30 @@ function TipModal(config) {
 }
 
 let modal;
-const onCancel = () => { modal && modal.destroy(); };
-const modalVisible = (content) => {
+const onCancel = () => {
+  modal && modal.destroy();
+};
+const modalVisible = (title = '提示', content) => {
   modal = TipModal({
-    title: '点餐开通提示',
+    title,
     content,
-    onCancel,
+    onCancel
   });
 };
-const OpenTip = ({ content }) => (
-  <div className="section-businessOpen-tip">
-    <Icon type="info-circle-o" onClick={() => modalVisible(content)} />
-  </div>
-);
+const OpenTip = ({ content, title, iconConfig = {} }) => {
+  const { type = 'info-circle-o', ...rest } = iconConfig;
+  
+  return (
+    <div className="section-open-tip">
+      <Icon type={type} onClick={() => modalVisible(title, content)} {...rest} />
+    </div>
+  );
+};
 
 OpenTip.show = modalVisible;
 OpenTip.propTypes = {
-  content: PropTypes.element.isRequired
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired
 };
 
 export default OpenTip;
