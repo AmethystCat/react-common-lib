@@ -36,7 +36,7 @@ let modal;
 const onCancel = () => {
   modal && modal.destroy();
 };
-const modalVisible = (title = '提示', content) => {
+const modalVisible = ({ title = '提示', content }) => {
   modal = TipModal({
     title,
     content,
@@ -48,12 +48,19 @@ const OpenTip = ({ content, title, iconConfig = {} }) => {
   
   return (
     <div className="section-open-tip">
-      <Icon type={type} onClick={() => modalVisible(title, content)} {...rest} />
+      <Icon type={type} onClick={() => modalVisible({ title, content })} {...rest} />
     </div>
   );
 };
 
 OpenTip.show = modalVisible;
+OpenTip.destroy = () => {
+  if (modal) {
+    modal.destroy();
+    return;
+  }
+  throw 'modal is not defined';
+};
 OpenTip.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired
