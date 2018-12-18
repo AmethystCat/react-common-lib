@@ -9,7 +9,11 @@ order: 2
 import { AddressCascader } from 'gatewayfe-lib';
 
 const onChange = (value) => console.log(value);
-const defaultValue = '2';
+const cascaderConfig = {
+  style: {
+    width: 300,
+  },
+};
 
-ReactDOM.render(<AddressCascader />, mountNode);
+ReactDOM.render(<AddressCascader {...{cascaderConfig, onChange}} />, mountNode);
 ```
