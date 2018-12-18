@@ -32,7 +32,7 @@ class Demo extends React.Component {
 
     return (
       <Form onSubmit={this.handleSubmit}>
-        <FormItem label="Price">
+        <FormItem>
           {getFieldDecorator('address', {
             initialValue: address
           })(<AddressCascader {...{ cascaderConfig }} />)}
