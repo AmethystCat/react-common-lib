@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressCascader UT snapshot 1`] = `
+<div
+  className="section-address"
+>
+  <span
+    className="ant-cascader-picker"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+  >
+    <span
+      className="ant-cascader-picker-label"
+    >
+      
+    </span>
+    <input
+      autoComplete="off"
+      className="ant-input ant-cascader-input "
+      disabled={false}
+      onKeyDown={[Function]}
+      placeholder="省 / 市 / 区"
+      readOnly={true}
+      type="text"
+      value=""
+    />
+    <i
+      className="anticon anticon-down ant-cascader-picker-arrow"
+    />
+  </span>
+</div>
+`;
