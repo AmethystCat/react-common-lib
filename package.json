@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "npm run npm-build && bisheng start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "npm-build": "rm -rf lib && babel components -d lib"
+    "npm-build": "rm -rf lib && babel components -d lib",
+    "test": "jest --verbose"
   },
   "author": "hc",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "antd": "^3.8.2",
     "babel-preset-env": "^1.7.0",
     "bisheng-plugin-description": "^0.1.4",
+    "china-division": "^2.1.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "prop-types": "^15.6.2",

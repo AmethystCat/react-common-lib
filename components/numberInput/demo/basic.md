@@ -6,7 +6,7 @@ order: 2
 组件的基本用法。
 
 ```jsx
-import { NumberInput } from 'gateway-lib';
+import { NumberInput } from 'gatewayfe-lib';
 
 const onChange = (value) => console.log(value);
 const defaultValue = '2';

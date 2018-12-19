@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioCheckbox UT snapshot 1`] = `
+<div
+  className="ant-checkbox-group"
+>
+  <label
+    className="ant-checkbox-group-item ant-checkbox-wrapper"
+  >
+    <span
+      className="ant-checkbox"
+      style={Object {}}
+    >
+      <input
+        checked={false}
+        className="ant-checkbox-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+        value="boy"
+      />
+      <span
+        className="ant-checkbox-inner"
+      />
+    </span>
+    <span>
+      衰哥
+    </span>
+  </label>
+  <label
+    className="ant-checkbox-group-item ant-checkbox-wrapper"
+  >
+    <span
+      className="ant-checkbox"
+      style={Object {}}
+    >
+      <input
+        checked={false}
+        className="ant-checkbox-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+        value="girl"
+      />
+      <span
+        className="ant-checkbox-inner"
+      />
+    </span>
+    <span>
+      霉女
+    </span>
+  </label>
+</div>
+`;
