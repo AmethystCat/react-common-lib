@@ -16,7 +16,6 @@
     "babel-loader": "^7.1.5",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "bisheng": "^0.28.0",
     "bisheng-plugin-antd": "^0.17.0",
     "bisheng-plugin-react": "^0.6.3",
     "eslint-loader": "^2.1.0",
@@ -28,6 +27,7 @@
   "dependencies": {
     "antd": "^3.8.2",
     "babel-preset-env": "^1.7.0",
+    "bisheng": "^0.29.0",
     "bisheng-plugin-description": "^0.1.4",
     "china-division": "^2.1.1",
     "enzyme": "^3.7.0",
