@@ -4,7 +4,7 @@ import DemoItem from './demoItem';
 
 export default class DemoDoc extends React.PureComponent {
   render() {
-    const { pageData, utils, demos } = this.props;
+    const { pageData, utils, demos = {}} = this.props;
     const { description, api } = pageData;
     const demoKeys = Object.keys(demos);
     // 判断是否是单列

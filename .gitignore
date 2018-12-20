@@ -3,6 +3,7 @@
 .idea/
 .cache/
 /node_modules/
+/_site/
 /dist/
 /coverage/
 npm-debug.log
